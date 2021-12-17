@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    
+    <!-- Vistas de pc-->
+
+    <record model="ir.ui.view" id="odoo502.pc_list_view">
+      <field name="name">odoo502.pc.view.tree</field>
+      <field name="model">odoo502.pc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="sistema"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo502.pc_search_view">
+      <field name="name">odoo502.pc.view.search</field>
+      <field name="model">odoo502.pc</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="sistema"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="odoo502.pc_form_view">
+      <field name="name">odoo502.pc.view.form</field>
+      <field name="model">odoo502.pc</field>
+      <field name="arch" type="xml">
+        <form string="Información pc">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                ID <field name="name" placeholder="id"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="sistema"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo502.pc_action_window">
+      <field name="name">Ordenador</field>
+      <field name="res_model">odoo502.pc</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoo502" id="odoo502.menu_root"/>
+    <menuitem name="Ordenadores" id="odoo502.menu_pc" parent="odoo502.menu_root"/>
+    <menuitem name="List" id="odoo502.menu_pc_list" parent="odoo502.menu_pc"
+              action="odoo502.pc_action_window"/>
+  </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+          <record id="object0" model="odoo502.pc">
+            <field name="name">1</field>
+            <field name="nombre">MSI</field>
+            <field name="sistema">Windows</field>
+          </record>
+
+         <record id="object1" model="odoo502.pc">
+            <field name="name">2</field>
+            <field name="nombre">Asus</field>
+            <field name="sistema">Linux</field>
+          </record>
+
+        <record id="object2" model="odoo502.pc">
+            <field name="name">3</field>
+            <field name="nombre">Mac</field>
+            <field name="sistema">Mac</field>
+          </record>
+
+    </data> 
+</odoo>
